@@ -3,14 +3,15 @@ import Button from "./Button";
 
 class Praktikan extends Component {
     state = {
-        nama: "Abbiyu Kirana Distira"
+        nama: "Abbiyu Kirana Distira",
+        nim: "21120117140010"
     }
-    UbahNamaPraktikan = () => {
+    UbahPraktikan = () => {
         this.setState((state) => {
-            if (state.nama === "Abbiyu Kirana Distira") {
-                return { nama: "Muhammad Afishal Fakhri" }
+            if (state.nama === "Abbiyu Kirana Distira" && state.nim === "21120117140010") {
+                return { nama: "Muhammad Afishal Fakhri", nim: "21120117130044" }
             } else {
-                return { nama: "Abbiyu Kirana Distira" }
+                return { nama: "Abbiyu Kirana Distira", nim: "21120117140010" }
             }
         })
     }
@@ -22,7 +23,8 @@ class Praktikan extends Component {
             <div>
                 <h3>Kelompok 8</h3>
                 <h3>{this.state.nama}</h3>
-                <Button onClick={this.UbahNamaPraktikan}>{this.state.nama == "Abbiyu Kirana Distira" ? 'Praktikan 1' :
+                <h3>{this.state.nim}</h3>
+                <Button onClick={this.UbahPraktikan}>{this.state.nama == "Abbiyu Kirana Distira" ? 'Praktikan 1' :
                         'Praktikan 2'}</Button>
             </div>
         );
