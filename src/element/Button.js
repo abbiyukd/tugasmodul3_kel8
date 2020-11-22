@@ -13,7 +13,7 @@ export default styled.button`
         props.background:${(props) =>props.background};
         `}
     color:white;
-    &hover{
+    &:hover{
         text-decoration:underline;
     }
 `;
