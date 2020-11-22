@@ -1,14 +1,14 @@
-import React from 'react';
+import logo from './logo.svg';
 import './App.css';
-import Parent from "./element/Parent";
-class App extends React.Component {
-  render() {
-    return (
-      <div className="App">
-        <h2>Kelompok 8</h2>
+import Parent from './element/Parent';
+function App() {
+  return (
+    <div className="App">
+      <header className="App-header">
         <Parent />
-      </div>
-    )
-  }
+      </header>
+    </div>
+  );
 }
+
 export default App;

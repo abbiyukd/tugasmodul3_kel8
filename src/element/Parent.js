@@ -1,7 +1,8 @@
 import { Component } from "react";
 import React from "react";
-import Antriansatu from "./Antriansatu";
-import Antriandua from "./Antriandua";
+import Praktikan from "./Praktikan";
+import HitungAntrian from "./HitungAntrian";
+import Button from "./Button"
 
 class Parent extends Component {
     state = {
@@ -9,10 +10,8 @@ class Parent extends Component {
         elemen2: false
     }
     componentDidMount() {
-        alert(`Mount triggered!`);
+        alert(`Selamat Datang!`);
     }
-
-
 
     ubahelemen1 = () => {
         this.setState((state) => {
@@ -24,25 +23,19 @@ class Parent extends Component {
             return { elemen2: !this.state.elemen2 }
         })
     }
-    shouldComponentUpdate(nextProps, nextState, nextContext) {
-        return window.confirm('OOKEEYYYY');
-    }
-    componentDidUpdate(prevProps, prevState, snapshot) {
-        alert(`antrian berhasil di update!`);
-    }
     render() {
         return (
             <div>
-                {this.state.elemen1 ? <Antriansatu /> : ''}
-                <button
-                    onClick={this.ubahelemen1}>{this.state.elemen1 ? 'Terima kasih' :
-                        'Ayo'} Antrian Pertama!</button>
+                {this.state.elemen1 ? <Praktikan /> : ''}
+                <Button
+                    onClick={this.ubahelemen1}>{this.state.elemen1 ? 'Hilangkan' :
+                        'Munculkan'} Nama Kelompok</Button>
                 <br />
                 <br />
-                {this.state.elemen2 ? <Antriandua /> : ''}
-                <button
-                    onClick={this.ubahelemen2}>{this.state.elemen2 ? 'Terima kasih' :
-                        'Ayo'} Antrian Kedua!</button>
+                {this.state.elemen2 ? <HitungAntrian /> : ''}
+                <Button
+                    onClick={this.ubahelemen2}>{this.state.elemen2 ? 'Hilangkan' :
+                        'Munculkan'} Perhitungan Antrian</Button>
             </div>
         );
     }
